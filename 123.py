@@ -1,6 +1,6 @@
 #I am a comment (Testing for upload)
 x = 5
-#當佢地你問題咁問人
+#當佢地係問題咁問人
 print(x != 5) # checking if both sides are not the same (False)
 print(x > 2)
 print(x < 2)
