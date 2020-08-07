@@ -18,12 +18,6 @@ print(price, pen, name)
 name = input('who are you?')
 print('HI', name)
 
-height = input('what is your height?')
-print(height)
-
-weight = input('what is your weight')
-print(weight)
-
 #記得最尾要加':'
 rain = input('今日有無落雨')
 if rain == '有':
@@ -69,10 +63,14 @@ else:
 	print('社會人')
 
 height = input('what is your height in kgs?')
-height = int, float(height)
+height = int(height)
 weight = input('what is your weight in meters')
-weight = int, float(weight)
-BMI = weight / height / height
+weight = float(weight)
+
+BMI_D = weight / height
+BMI_D = int(BMI_D)
+
+BMI = BMI_D / height
 if BMI < 18.5:
 	print ('過輕')
 elif BMI >= 18.5 and BMI < 24:
@@ -86,4 +84,19 @@ elif BMI >= 30 and BMI < 35:
 else:
 	print('重度肥胖')
 print ('Your BMI is', BMI)
+print ('Your BMI_D is', BMI_D)
 
+country = input('請問你係咩國家既人?')
+age = input('請問你幾歲?')
+age = int(age)
+if country == 'china':
+	if age >= 18:
+		print('你可以考車牌')
+	else:
+		print('你不可以考車牌')
+
+elif country == 'USA':
+	if age >= 16:
+		print('你可以考車牌')
+	else:
+		print('你不可以考車牌')
