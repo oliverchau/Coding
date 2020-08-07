@@ -89,7 +89,7 @@ print ('Your BMI_D is', BMI_D)
 country = input('請問你係咩國家既人?')
 age = input('請問你幾歲?')
 age = int(age)
-if country == 'china':
+if country == 'China':
 	if age >= 18:
 		print('你可以考車牌')
 	else:
@@ -100,3 +100,5 @@ elif country == 'USA':
 		print('你可以考車牌')
 	else:
 		print('你不可以考車牌')
+else:
+	print('你只能輸入China or USA')
