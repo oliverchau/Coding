@@ -63,15 +63,12 @@ elif age >= 18 and age <22:
 else:
 	print('社會人')
 
-height = input('what is your height in kgs?')
+height = input('what is your height in centimeters cms?')
 height = int(height)
-weight = input('what is your weight in meters')
-weight = float(weight)
+weight = input('what is your weight in kgs?')
+weight = int(weight)
 
-BMI_D = weight / height
-BMI_D = int(BMI_D)
-
-BMI = BMI_D / height
+BMI = weight / height / height * 100 * 100
 if BMI < 18.5:
 	print ('過輕')
 elif BMI >= 18.5 and BMI < 24:
@@ -85,7 +82,6 @@ elif BMI >= 30 and BMI < 35:
 else:
 	print('重度肥胖')
 print ('Your BMI is', BMI)
-print ('Your BMI_D is', BMI_D)
 
 country = input('請問你係咩國家既人?')
 age = input('請問你幾歲?')
@@ -114,9 +110,49 @@ while True:
 		print('Gaming mode 02 activated')
 	else:
 		print('只能輸入 1/2/q')
-
+#control c = force shutdown of the program
 while True:
 	mode = input('請輸入你的名字: ')
 	if mode == 'q': # quit
 		break
+#實際執行起來的話，只會印出第一次a以後，就卡在印b的地方無限迴圈，所以c沒有機會印出來	
+#i = 0
+#while i < 100:
+    #print('a')
+    #j = 0
+    #while j < 100:
+    	#print('b')
+#print('c')
+
+#這要仔細思考雙層的while, while j < 100的那個迴圈因為在while i < 100的迴圈裡，
+#整個迴圈會執行100次，裡面又會印出100次b，所以變成100*100 = 印出10000次b
+#i = 0
+#while i < 100:
+    #print('a')
+    #j = 0
+    #while j < 100:
+        #print('b')
+        #j = j + 1
+    #i = i + 1
+#print('c')
+#i=0, i=1,=2, i=2,=3
+i = 0
+while i < 6:
+    print('a')
+    i = i + 1
+
+
+print ('密碼重試程式')
+n = 3
+while True:
+	password = input('請輸入密碼: ')
+	if password == '123456':
+		print ('登入成功!')
+		break
+	else:
+		print ('密碼錯誤,請重新輸入,你還有', n,'次機會')
+		n = n - 1
+		if n == 0:
+			print ('你已沒機會了,拜拜~')
+			break
 	
