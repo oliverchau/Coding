@@ -155,4 +155,17 @@ while True:
 		if n == 0:
 			print ('你已沒機會了,拜拜~')
 			break
-	
+
+#載入一個叫random的資料庫(package)中的一本「書」/module, '.'=random(module)中的randon int.(整數)
+import random
+r = random.randint(1, 100) #1-100抽一個數
+while True:
+	num = input('請估數字: ')
+	num = int(num)
+	if num == r:
+		print ('你估中了!')
+		break
+	elif num > r:
+		print ('估細啲啦!')
+	elif num < r:
+		print ('估大啲啦!')
