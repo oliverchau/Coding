@@ -159,13 +159,17 @@ while True:
 #載入一個叫random的資料庫(package)中的一本「書」/module, '.'=random(module)中的randon int.(整數)
 import random
 r = random.randint(1, 100) #1-100抽一個數
+count = 0
 while True:
+	count += 1 # count = count + 1
 	num = input('請估數字: ')
 	num = int(num)
 	if num == r:
 		print ('你估中了!')
+		print('今次你估第', count, '次')
 		break
 	elif num > r:
 		print ('估細啲啦!')
 	elif num < r:
 		print ('估大啲啦!')
+	print('今次你估第', count, '次')
