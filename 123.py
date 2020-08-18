@@ -158,7 +158,11 @@ while True:
 
 #載入一個叫random的資料庫(package)中的一本「書」/module, '.'=random(module)中的randon int.(整數)
 import random
-r = random.randint(1, 100) #1-100抽一個數
+start = input('請決定數字值範圍(開始值)')
+end = input('請決定數字值範圍(結束值)')
+start = int(start)
+end = int(end)
+r = random.randint(start, end) #1-100抽一個數, (start&end係人地決定)
 count = 0
 while True:
 	count += 1 # count = count + 1
@@ -173,3 +177,50 @@ while True:
 	elif num < r:
 		print ('估大啲啦!')
 	print('今次你估第', count, '次')
+
+#List
+a = [] #空List
+a = [True, 'Toyota', 'Honda', 1132]#「索引」index 0 is True...etc.
+print (a[3])
+a.append('Audi')#'.'=的, append ~= attach sth on it.
+print (a)
+print(len(a))#len=length of a[]
+print('Audi' in a) #是非題**asking the computer yes/no.
+print('Benz' in a) #是非題**asking the computer yes/no.
+
+#for loop=將Cars(list) 既野一樣一樣拎出黎。每次拎出黎既野個'暫時名'=car.
+cars = ['Toyota', 'Honda']
+for car in cars:
+	print(car)#每次拎一樣野出黎, 就print一次;2樣野=走2次。
+
+names = ['Allen', 'Tom', 'Mayday', 'JJ', 'Jolin', 'Jay', 'Jam']
+for name in names:
+	print('Hi', name)
+
+#字串當清單
+car = 'Audi'
+for c in car:
+	print(c)
+print(len(car))
+print('A' in car)
+
+#讀取檔案 (係同一路徑起左個新既file先, 再叫佢做food.txt)
+with open('food.txt', 'r') as f:
+	for line in f:#每一行叫line;一行行咁print出黎
+		print(line)#首先,txt你enter左一次=1*\n(換行), 然後print本身又換一次行
+		#變左換左行
+data = []
+with open('food.txt', 'r') as f:
+	for line in f:#每一行叫line;一行行咁print出黎
+		data.append(line)#今次就無左換行,但見到個\n。
+print(data)
+
+data = []
+with open('food.txt', 'r') as f:
+	for line in f:#每一行叫line;一行行咁print出黎
+		data.append(line.strip())#去掉[line]多餘的東西;空格,行...etc.*(只能對字串有效)
+print(data)
+
+#open 是打開(夾住)檔案
+#以前就要右 close.
+#但with 就可以簡化close, 只要當程式離開了with的structure(e.g line:221)
