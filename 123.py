@@ -224,3 +224,15 @@ print(data)
 #open 是打開(夾住)檔案
 #以前就要右 close.
 #但with 就可以簡化close, 只要當程式離開了with的structure(e.g line:221)
+data = []
+with open('reviews.txt', 'r') as f:
+	for line in f:
+		data.append(line)
+		count += 1#if count = count + 1
+		if count % 1000 == 0:#%=求餘數
+			print(len(data))#每睇一下印一次
+print(len(data))	
+
+print(data[0])
+print('---------------------')
+print(data[1])
