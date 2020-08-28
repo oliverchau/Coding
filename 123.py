@@ -240,3 +240,17 @@ for d in data:
 	sum_len = sum_len + len(d)
 print('留言的每粒字;data有幾多粒:,', sum_len)
 print('留言的平均長度為', sum_len/len(data))
+
+new = []
+for d in data:
+	if len(d) < 100:
+		new.append(d)
+print('一共有', len(new), '筆留言長度少於100個*英文字')
+print(new[0])
+print(new[1])
+
+good = []
+for d in data:
+	if 'good' in d:#(是非題)
+		good.append(d)
+print('一共有', len(good), '筆留言有"good"既英文字')
